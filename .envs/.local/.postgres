@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=hain_site
+POSTGRES_USER=VBrywLkKCvtKWHFBQepbuupZKSSEXOEQ
+POSTGRES_PASSWORD=BWqqRhsdudbYy3c1Xb434X1MjixsZ3aYeljSBXgZf8hlSF0gJTPIGS7dZ25gLfb5
