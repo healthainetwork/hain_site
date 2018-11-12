@@ -6,7 +6,23 @@ from .base import env
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-SECRET_KEY = env('DJANGO_SECRET_KEY', default='6iPuP7tQvekjv9oLX5Pz5mI7K0UdphMyaGZRgu1UK25uEkqvc6t73gBud97IBEpz')
+# SECRET_KEY = env('DJANGO_SECRET_KEY', default='6iPuP7tQvekjv9oLX5Pz5mI7K0UdphMyaGZRgu1UK25uEkqvc6t73gBud97IBEpz')
+from django.utils.crypto import get_random_string
+import os
+
+def generate_secret_key(fname):
+    chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+    f = open(fname, 'w')
+    f.write("SECRET_KEY = '%s'\n"%get_random_string(50, chars))
+
+# SECURITY WARNING: keep the secret key used in production secret!
+try:
+    from .secret_key import *
+except ImportError:
+    SETTINGS_DIR=os.path.abspath(os.path.dirname(__file__))
+    generate_secret_key(os.path.join(SETTINGS_DIR, 'secret_key.py'))
+    from .secret_key import *
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = [
     "localhost",
