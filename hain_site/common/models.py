@@ -8,6 +8,7 @@ class AboutMembers(models.Model):
 	degree = models.CharField("Highest Degree Held", max_length=20, blank=True)
 	profession = models.CharField("Profession", max_length=100)
 	team_role = models.CharField("Role in Team", max_length=100)
+	team_department = models.CharField("Team Department", max_length=100, blank=True)
 	headshot = models.ImageField()
 
 	def __str__(self): 
@@ -39,12 +40,24 @@ class Updates(models.Model):
 		verbose_name = "Update"
 		verbose_name_plural = "Updates"
 
-class Career(models.Model):
+class Company(models.Model):
 	company_logo = models.ImageField()
-	company_name = models.CharField("Name of Company", max_length= 250)
+	company_name = models.CharField("Name of Company", max_length=250)
 	company_description = models.CharField("Company Description", max_length=1000)
 	company_link = models.URLField()
+	class Meta: 
+		verbose_name = "Company"
+		verbose_name_plural = "Companies"
+	def __str__(self): 
+		return self.company_name
+
+class Career(models.Model):
+	company = models.ForeignKey(Company, on_delete=models.CASCADE)
+	career_role = models.CharField("Position", max_length=250)
+	career_location = models.CharField("Location", max_length=250, blank=True)
 	posting_link = models.URLField()
 	class Meta: 
 		verbose_name = "Career"
 		verbose_name_plural = "Careers"
+	def __str__(self): 
+		return "%s, %s" % (self.company, self.career_role, )

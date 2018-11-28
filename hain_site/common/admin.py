@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import AboutMembers, Updates, Career
+from django.apps import apps
 
-# Register your models here.
-admin.site.register(AboutMembers)
-admin.site.register(Updates)
-admin.site.register(Career)
+app = apps.get_app_config('common')
+
+for model_name, model in app.models.items():
+    admin.site.register(model)
