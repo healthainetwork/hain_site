@@ -4,9 +4,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from common.views import index_view
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("", view=index_view, name="index"),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
@@ -20,7 +21,10 @@ urlpatterns = [
         include("hain_site.users.urls", namespace="users"),
     ),
     path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
+    path(
+        "common/",
+        include("hain_site.common.urls", namespace="common"),
+    ),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
