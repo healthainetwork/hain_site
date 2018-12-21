@@ -4,13 +4,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import RedirectView, TemplateView
 from django.views import defaults as default_views
-from common.views import index_view, updates_view
+from common.views import index_view, careers_view, updates_view
 
 urlpatterns = [
     path("", view=index_view, name="index"),
     path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
     path("updates/", TemplateView.as_view(template_name="pages/updates_landing.html"), name="updates_landing"),
     re_path(r'^updates/(?P<type_of_update>\w+)/(?:page-(?P<page_number>\d+)/)?$', updates_view, name="updates_view"),
+    path("careers/", view=careers_view, name="careers_view"),
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management

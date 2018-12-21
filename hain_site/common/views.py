@@ -2,6 +2,10 @@ from django.shortcuts import render
 from itertools import chain
 from .models import *
 
+import collections
+
+def makehash():
+    return collections.defaultdict(makehash)
 
 def index_view(request):
     team_members = AboutMembers.objects.exclude(team_role = "Advisor")
@@ -27,3 +31,18 @@ def updates_view(request, type_of_update, page_number = 1):
     context = {'updates': updates, 'category': type_of_update, }
 
     return render(request, 'pages/updates.html', context)
+
+def careers_view(request):
+
+    careers = Career.objects.all()
+    company_list = careers.order_by('company').values('company').distinct()
+    companies = list(Company.objects.filter(id__in = company_list).values())
+
+    for company_obj in companies:
+        career_objs = list(Career.objects.filter(company = company_obj["id"]).values())
+        company_obj["careers"] = career_objs
+
+    context = {'companies': companies}
+
+    return render(request, 'pages/careers.html', context)
+

@@ -1,0 +1,33 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}HEALTH AI NETWORK - AI in healthcare{% endblock %}
+
+{% block header_content %}
+  	<h1 class="mb-1">Career Board</h1>
+{% endblock %}
+
+{% block content %}
+
+  <section class="content-section bg-light" id="updates">
+    
+      {% for company in companies %}
+	      <div class="container">
+	          <a href="{{ company.company_link|safe }}"><h2>{{ company.company_name }}</h2></a>
+	          <p>{{ company.company_description }}</p>
+
+	        <div class="row">
+	          {% for career in company.careers %}
+	            <div class="col-sm-6">
+	              <a href="{{ career.posting_link|safe }}">
+	                <h4>{{ career.career_role }}</h4>
+	                {% if career.career_location %}<p>{{ career.career_location }}</p>{% endif %}
+	      		  </a>
+	      	    </div>
+	          {% endfor %}
+	        </div>
+	       </div>
+      {% endfor %}
+  </section>
+
+{% endblock %}
