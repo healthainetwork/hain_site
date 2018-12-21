@@ -1,0 +1,50 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}HEALTH AI NETWORK - AI in healthcare{% endblock %}
+
+{% block header_content %}
+  {% if category == 'clinical' %}
+  	<h1 class="mb-1">Clinical</h1>
+  	<p>Your latest on AI in the clinical setting</p>
+  {% elif category == 'business_funding' %}
+  	<h1 class="mb-1">Business & Funding</h1>
+  	<p>Your latest on movers and shakers in the healthcare AI space</p>
+  {% elif category == 'technology' %}
+  	<h1 class="mb-1">Technology</h1>
+  	<p> Your latest on new learnings in AI technology and tools</p>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  <section class="content-section bg-light" id="updates">
+    <div class="container">
+			{% for update in updates %}
+			<div class="row">
+			    {% if forloop.counter0|divisibleby:2 %}
+			        <div class="col-sm-8">
+			        	<p><em>{{ update.publication_date|date:"F j, Y" }}</em></p>
+			        	{% if title %}<p><strong>{{ update.title }}</strong></p>{% endif %}
+
+			        	<p>{{ update.description }}</p>
+			        	<a href="{{ article_link|urlencode }}">See more here</a>
+			        </div>
+			        <div class="col-sm-4"><img class="mb-2 img-fluid" src="{{MEDIA_URL}}{{ update.image }}" alt="{{ update.publication_date}}"></div>
+			    {% else %}
+			        <div class="col-sm-4"><img class="mb-2 img-fluid" src="{{MEDIA_URL}}{{ update.image }}" alt="{{ update.publication_date}}"></div>
+			        <div class="col-sm-8">
+			        	<p><em>{{ update.publication_date|date:"F j, Y" }}</em></p>
+			        	{% if title %}<p><strong>{{ update.title }}</strong></p>{% endif %}
+
+			        	<p>{{ update.description }}</p>
+			        	<a href="{{ article_link|urlencode }}">See more here</a>
+			        </div>
+			    {% endif %}
+			</div>
+			<hr>
+			{% endfor %}
+	</div>
+  </section>
+
+{% endblock %}

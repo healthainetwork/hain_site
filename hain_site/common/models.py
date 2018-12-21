@@ -39,6 +39,8 @@ class Updates(models.Model):
 	class Meta: 
 		verbose_name = "Update"
 		verbose_name_plural = "Updates"
+	def __str__(self):
+		return "%s: %s" % (self.publication_date.strftime("%Y-%m-%d"), self.description[:20], )
 
 class Company(models.Model):
 	company_logo = models.ImageField()

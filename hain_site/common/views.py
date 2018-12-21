@@ -18,3 +18,12 @@ def index_view(request):
     'advisors': advisors, }
 
     return render(request, 'pages/index.html', context)
+
+def updates_view(request, type_of_update, page_number = 1):
+    update_categories = {'clinical': 'C', 'business_funding': 'B', 'technology': 'T'}
+
+    updates = Updates.objects.filter(type_of_update=update_categories[type_of_update]).order_by('-publication_date')
+
+    context = {'updates': updates, 'category': type_of_update, }
+
+    return render(request, 'pages/updates.html', context)
