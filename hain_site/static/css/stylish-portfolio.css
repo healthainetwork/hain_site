@@ -93,11 +93,7 @@ h6 {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.1))), url("../img/bg-masthead.jpg");
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../images/bg-masthead.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color:#d6a002!important
 }
 
 .masthead h1 {
@@ -126,7 +122,7 @@ h6 {
   transition: all 0.4s ease 0s;
   -webkit-transform: translateX(250px);
   transform: translateX(250px);
-  background: #1D809F;
+  background: #f8f9fa;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -142,13 +138,11 @@ h6 {
 .sidebar-nav li.sidebar-nav-item a {
   display: block;
   text-decoration: none;
-  color: #fff;
   padding: 15px;
 }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
-  color: #fff;
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -167,12 +161,7 @@ h6 {
   padding-left: 15px;
 }
 
-.sidebar-nav > .sidebar-brand a {
-  color: #fff;
-}
-
 .sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
   background: none;
 }
 
@@ -371,6 +360,10 @@ a:hover, a:focus, a:active {
 .text-primary {
   color: #1D809F !important;
 }
+
+.bg-secondary{
+  background-color:#d6a002!important;
+ }
 
 .text-secondary {
   color: #ecb807 !important;

@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Stylish Portfolio - Start Bootstrap Template</title>
+    <title>HEALTH AI NETWORK - AI in healthcare</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicons/favicon.ico' %}"/>
 
     <!-- Bootstrap Core CSS -->
@@ -35,54 +35,214 @@
     <nav id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
-          <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+          <a class="js-scroll-trigger" href="#signupform">Join</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#page-top">Home</a>
+          <a class="js-scroll-trigger" href="#seminars">Seminars</a>
         </li>
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#about">About</a>
         </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#services">Services</a>
+
+        <li class="sidebar-nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Updates
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Clinical</a>
+            <a class="dropdown-item" href="#">Business & Funding</a>
+            <a class="dropdown-item" href="#">Technology</a>
+          </div>
         </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-        </li>
-        <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#contact">Contact</a>
-        </li>
+
       </ul>
     </nav>
 
     <!-- Header -->
     <header class="masthead d-flex">
       <div class="container text-center my-auto">
-        <h1 class="mb-1">Stylish Portfolio</h1>
-        <h3 class="mb-5">
-          <em>A Free Bootstrap Theme by Start Bootstrap</em>
-        </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+        <h1 class="mb-1">learn & innovate together.</h1>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#signupform">Join the Network</a>
       </div>
       <div class="overlay"></div>
     </header>
 
     <!-- About -->
-    <section class="content-section bg-light" id="about">
+    <section class="content-section bg-light" id="intro">
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-            <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-              <a href="https://unsplash.com/">Unsplash</a>!</p>
-            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+            <h3>
+              AI is happening in health care. <br>
+              It's time we get involved together.
+            </h3>
+            <p class="lead mb-5">Join the network of professionals & students interested in applying AI technologies in health care with the <a href="#about">shared mission</a></p>
+          </div>
+        </div>       
+      </div>
+    </section>
+
+    <section class="content-section bg-primary text-white" id="moreinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6"> 
+            <h2>Health AI Primer</h2>
+
+            <p>We created a concise practical Primer for users & developers of targeted AI solutions in health care. </p>
+            <p>The Primer will be available to download for free here in early 2019!</p>
+          </div>
+          <div class="col-lg-6"> 
+            <h2>Fall 2018 Seminar Series</h2>
+
+            <p>We crafted a curriculum to equip students & professionals in Medicine, Engineering, and Business with what's necessary to meaningfully discuss & develop AI applications in health care. This is the first seminar series on health AI co-hosted by UPenn & Stanford.</p>
+            ​<p>Click here for schedules.</p>
           </div>
         </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-6"> 
+            <h2>Health AI Updates & Newsletter</h2>
+            <p>Stay current on developments in technologies, clinical applications, and startups/funding related to healthcare AI. Our experts curate high-quality articles released in public media. Our newsletter will also share opportunities for career and learning to support your growth.</p>
+          </div>
+          <div class="col-lg-6"> 
+            <h2>Health AI Labs </h2>
+            <p>Are you a clinician with data & clinical problem you care about but lack the time/skills to do the analysis? Are you a data scientist who want to solve a real healthcare problem using quality data? We help healthcare providers/systems filter and outsource problems that can leverage AI to data crunchers. Stay tuned for more on our Data Challenge (launch Spring 2019) #access #clinicaldata #meritocracy #winwin #collaboration #multidisciplinary #ecosystem</p>
+
+            <p>Do you have a health AI startup idea and need help finding co-founders? Want to shadow a clinician to better understand their pain point and workflow? Need help with your problem statement, business plan, or funding without equity loss? Stay tuned re HAIN Ventures (launch Spring 2019), our incubator for health information technology ventures💡 #accelerate #support #entrepreneurs #strongstart #changehealthcare</p>
+          </div>
+        </div> 
       </div>
     </section>
 
     <!-- Services -->
-    <section class="content-section bg-primary text-white text-center" id="services">
+    <section class="content-section bg-light text-center" id="partners">
+      <div class="container">
+        <div class="content-section-heading">
+          <h2 class="mb-5">Our Partners</h2>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-4 align-middle"><a href="http://shift.stanford.edu/" target="_blank"><img class="mb-2 img-fluid" src="{% static 'images/partners/logo-stanford-medicine-shift.png' %}" alt="SHIFT Logo"></a> </div>
+          <div class="col-md-4 align-middle"><a href="http://pennhealthx.com/" target="_blank"><img class="mb-2 img-fluid" src="{% static 'images/partners/pennhealthx-logo.png' %}" alt="PennHealthX Logo"></a> </div>
+          <div class="col-md-4 align-middle"><a href="https://groups.wharton.upenn.edu/wdhc/" target="_blank"><img class="mb-2 img-fluid" src="{% static 'images/partners/wdhc-logo.png' %}" alt="WDH Logo"></a> </div>
+
+          <div class="col-md-4 align-middle"><a href="http://penndsg.com/" target="_blank"><img class="mb-2 img-fluid" src="{% static 'images/partners/pdsg-logo_1.png' %}" alt="Penn Data Science Group Logo"></a> </div>
+          <div class="col-md-4 align-middle"><a href="https://physicianscientists.site-ym.com/" target="_blank"><img class="mb-2 img-fluid" src="{% static 'images/partners/apsa-logo-black.png' %}" alt="APSA Logo"></a> </div>
+          <div class="col-md-4 align-middle"><a href="https://healthtech.upenn.edu/" target="_blank"><img class="mb-2 img-fluid" src="{% static 'images/partners/phtc-logo.png' %}" alt="Penn Health-Tech Logo"></a> </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section bg-secondary text-center" id="quotes">
+      <div class="container">
+
+        <h4 class="mb-4">“Just as electricity transformed almost everything 100 years ago, today I actually have a hard time thinking of an industry that I don’t think AI will transform in the next several years”  - Andrew Ng -</h4>
+
+        <h4>"We always overestimate the change that will occur in the next two years and underestimate the change that will occur in the next ten. Don’t let yourself be lulled into inaction."  - Bill Gates -</h4>
+        
+      </div>
+    </section>
+
+    <section class="content-section bg-light" id="signupform">
+      <div class="container col-sm-8">
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+        <form action="https://healthainetwork.us19.list-manage.com/subscribe/post?u=49df26d48b84597b7ddb1a1ca&amp;id=77b62cb3b1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+
+            <h2>Join the network today</h2>
+            <p>Be first in line to receive news on upcoming seminars and AI updates.</p>
+            <p class="lead mb-5">Subscribe to our mailing list</p>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+
+            <div class="mc-field-group form-group">
+              <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span></label>
+              <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+            </div>
+
+            <div class="form-row">
+              <div class="mc-field-group form-group col-sm-6">
+                <label for="mce-FNAME">First Name  <span class="asterisk">*</span></label>
+                <input type="text" value="" name="FNAME" class="required form-control" id="mce-FNAME">
+              </div>
+              <div class="mc-field-group form-group col-sm-6">
+                <label for="mce-LNAME">Last Name  <span class="asterisk">*</span></label>
+                <input type="text" value="" name="LNAME" class="required form-control" id="mce-LNAME">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="mc-field-group form-group col-sm-6">
+                <label for="mce-AFFIL">University/Organization  <span class="asterisk">*</span></label>
+                <input type="text" value="" name="AFFIL" class="required form-control" id="mce-AFFIL">
+              </div>
+              <div class="mc-field-group form-group col-sm-6">
+                <label for="mce-POSITION">Position  <span class="asterisk">*</span></label>
+                <select name="POSITION" class="required form-control" id="mce-POSITION">
+                  <option value=""></option>
+                  <option value="Clinician">Clinician</option>
+                  <option value="Data Scientist">Data Scientist</option>
+                  <option value="Developer">Developer</option>
+                  <option value="Industry Professional">Industry Professional</option>
+                  <option value="Entrepeneur">Entrepeneur</option>
+                  <option value="Student, Undergraduate">Student, Undergraduate</option>
+                  <option value="Student, Business">Student, Business</option>
+                  <option value="Student, Medical">Student, Medical</option>
+                  <option value="Student, Other">Student, Other</option>
+                  <option value="Consultant">Consultant</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mc-field-group form-group">
+              <label for="mce-OWNSITE">Personal Website </label>
+              <input type="text" value="" name="OWNSITE" class="form-control" id="mce-OWNSITE">
+            </div>
+
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_49df26d48b84597b7ddb1a1ca_77b62cb3b1" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary"></div>
+          </div>
+        </form>
+        </div>
+        <!--End mc_embed_signup-->
+      </div>
+    </section>
+
+    <section class="content-section bg-primary text-white" id="seminars">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h3>
+              Seminar Series. Fall 2018 <br>
+              @UPenn & @Stanford
+            </h3>
+            <p class="lead mb-5">Let's get real on what AI technologies are and how to apply them in healthcare.</p>
+          </div>
+        </div>   
+        <div class="row">
+          <div class="col-lg-4">
+            <h2>Fall 2018 | Penn</h2>
+            <p>Click <a href="https://www.healthainetwork.org/fall-2018-upenn.html">here</a> for a list of upcoming seminars and recaps of past ones @UPenn. Seminars will be live streamed on <a href="http://www.youtube.com/channel/UCfwRMLvTFymNnkA0ojW-QLw/">our YouTube channel</a></p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Fall 2018 | Stanford</h2>
+            <p>Click <a href="http://cs522.stanford.edu/">here</a> for a schedule of talks @Stanford</p>
+          </div>
+          <div class="col-lg-4">
+            <h2>Archives</h2>
+            <p>Click <a href="http://cs522.stanford.edu/2017/index.html">here</a> for a schedule of Fall 2017 seminar series @Stanford</p>
+          </div>
+        </div>    
+      </div>
+    </section>
+
+    <!-- Services -->
+ <!--    <section class="content-section bg-primary text-white text-center" id="services">
       <div class="container">
         <div class="content-section-heading">
           <h3 class="text-secondary mb-0">Services</h3>
@@ -129,26 +289,46 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Callout -->
-    <section class="callout">
+<!--     <section class="callout">
       <div class="container text-center">
         <h2 class="mx-auto mb-5">Welcome to
           <em>your</em>
           next website!</h2>
         <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/template-overviews/stylish-portfolio/">Download Now!</a>
       </div>
-    </section>
+    </section> -->
 
     <!-- Portfolio -->
 
     <!-- Portfolio -->
-    <section class="content-section" id="team">
+    <section class="content-section" id="about">
+
       <div class="container">
+        <p>Empowering users & innovators in healthcare.</p>
+        <p class="mb-2">“The best way to predict the future is to invent it”  - Alan Kay -</p>
+
+        <h2>Our Mission</h2>
+        <p><strong>Health AI Network</strong> is an open multidisciplinary community of students and professionals interested in using AI effectively to address needs in healthcare. </p>
+
+        <p><strong>Our Mission</strong> is to <strong>advance proper understanding, development, and adoption of AI in healthcare.</strong><br> 
+        <strong>We believe</strong> that artificial intelligence technologies can make health care more accessible, affordable, accurate, & humane.<br>
+        <strong>We also believe</strong> it is critical to enable health care professionals to participate in the ideation, development, and implementation of health AI solutions. </p>
+
+        <p><strong>We enable</strong> relevant stakeholders across industries to learn of each others' needs & capabilities with the hope of impactful collaboration via providing platform & resources for: </p>
+
+        <p><strong>Learning:</strong>  We discover, curate, and develop content to equip stakeholders in clinical service, business, and data science with the essential language and perspective to leverage AI effectively. Our current offerings are annual Seminar Series and Health AI Newsletter. Stay tuned for our practical Primer (to be released this winter)!</p>
+
+        <p><strong>Action:</strong> We identify low-hanging problems in healthcare ripe for AI application and empower motivated individuals to tackle. Our Team is actively setting up the following to make available to our wider Community in January 2019: 
+        - Clinical Data Challenge: crowdsourcing best data science solution for a well-identified problem with well-prepped data 
+        - Incubator: providing a structured program with necessary resources & supportive environment to help entrepreneurially-wired members to take the first crucial steps in building a commercial health information technology solution. </p>
+
+        <hr>
         <div class="content-section-heading text-center">
           <!-- <h3 class="text-secondary mb-0">About Team</h3> -->
-          <h2 class="mb-5">Team Members</h2>
+          <h2 class="mb-5">Our Team</h2>
         </div>
         <div class="row no-gutters">
 
@@ -167,7 +347,7 @@
         </div>
 
         <div class="content-section-heading text-center">
-          <h2 class="mb-5">Advisors</h2>
+          <h2 class="mb-5">Our Advisors</h2>
         </div>
 
         <div class="row no-gutters">
@@ -242,22 +422,22 @@
     </section> -->
 
     <!-- Call to Action -->
-    <section class="content-section bg-primary text-white">
+<!--     <section class="content-section bg-primary text-white">
       <div class="container text-center">
         <h2 class="mb-4">The buttons below are impossible to resist...</h2>
         <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
         <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
       </div>
-    </section>
+    </section> -->
 
-    <!-- Map -->
-    <section id="contact" class="map">
+<!-- Map -->
+<!--     <section id="contact" class="map">
       <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
       <br/>
       <small>
         <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
       </small>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer class="footer text-center">
