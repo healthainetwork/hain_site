@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from itertools import chain
 from .models import *
+from django_tables2 import RequestConfig
+from .tables  import SeminarTable
 
 import collections
 
@@ -45,4 +47,13 @@ def careers_view(request):
     context = {'companies': companies}
 
     return render(request, 'pages/careers.html', context)
+
+def seminars_view(request):
+
+    seminars = Seminar.objects.all()
+    table = SeminarTable(seminars)
+    RequestConfig(request).configure(table)
+    context = {'table': table}
+
+    return render(request, 'pages/seminars-upenn.html', context)
 

@@ -47,13 +47,16 @@
     <nav id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
-          <a class="js-scroll-trigger" href="#signupform">Join</a>
+          <a class="js-scroll-trigger" href="{% url 'index' %}">Home</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#seminars">Seminars</a>
+          <a class="js-scroll-trigger" href="{% url 'index' %}#signupform">Join</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#about">About</a>
+          <a class="js-scroll-trigger" href="{% url 'index' %}#seminars">Seminars</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="{% url 'index' %}#about">About</a>
         </li>
 
         <li class="sidebar-nav-item dropdown">
@@ -86,26 +89,43 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="footer text-center">
+    <footer class="footer">
       <div class="container">
-        <ul class="list-inline mb-5">
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white mr-3" href="#">
-              <i class="icon-social-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white" href="#">
-              <i class="icon-social-github"></i>
-            </a>
-          </li>
-        </ul>
-        <p class="text-muted small mb-0">Copyright &copy; Your Website 2018</p>
+
+        <div class="row">
+          <div class="col-sm-6 text-center">
+            <table class="table table-sm table-borderless">
+              <thead>
+                <tr>
+                  <th scope="col"><a href="{% url 'index' %}#seminars">Seminars</a></th>
+                  <th scope="col"><a href="{% url 'updates_landing' %}">AI Updates</a></th>
+                  <th scope="col"><a href="{% url 'index' %}#about">About Us</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="{% url 'seminars_view' %}">@Penn</a></td>
+                  <td><a href="{% url 'updates_view' type_of_update='technology' %}">Tech</a></td>
+                  <td><a href="{% url 'index' %}#mission">Mission</a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://cs522.stanford.edu/">@Stanford</a></td>
+                  <td><a href="{% url 'updates_view' type_of_update='clinical' %}">Clinical</a></td>
+                  <td><a href="{% url 'index' %}#team">Team</a></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><a href="{% url 'updates_view' type_of_update='business_funding' %}">Business & Funding</a></td>
+                  <td><a href="https://www.youtube.com/channel/UCfwRMLvTFymNnkA0ojW-QLw/">YouTube Channel</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-sm-4 offset-sm-2 text-right">
+            Health AI Network is a Pennsylvania<br>501(c)(3) ​nonprofit corporation
+          </div>
+        </div>
+        <p class="text-muted small mb-0 text-center">© COPYRIGHT 2018. ALL RIGHTS RESERVED.</p>
       </div>
     </footer>
 

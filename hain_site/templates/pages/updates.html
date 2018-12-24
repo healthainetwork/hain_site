@@ -27,8 +27,7 @@
 			        	<p><em>{{ update.publication_date|date:"F j, Y" }}</em></p>
 			        	{% if title %}<p><strong>{{ update.title }}</strong></p>{% endif %}
 
-			        	<p>{{ update.description }}</p>
-			        	<a href="{{ article_link|urlencode }}">See more here</a>
+			        	{{ update.description | safe  }}
 			        </div>
 			        <div class="col-sm-4"><img class="mb-2 img-fluid" src="{{MEDIA_URL}}{{ update.image }}" alt="{{ update.publication_date}}"></div>
 			    {% else %}
@@ -37,8 +36,7 @@
 			        	<p><em>{{ update.publication_date|date:"F j, Y" }}</em></p>
 			        	{% if title %}<p><strong>{{ update.title }}</strong></p>{% endif %}
 
-			        	<p>{{ update.description }}</p>
-			        	<a href="{{ article_link|urlencode }}">See more here</a>
+			        	{{ update.description | safe }}
 			        </div>
 			    {% endif %}
 			</div>

@@ -4,11 +4,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import RedirectView, TemplateView
 from django.views import defaults as default_views
-from common.views import index_view, careers_view, updates_view
+from common.views import index_view, careers_view, updates_view, seminars_view
 
 urlpatterns = [
     path("", view=index_view, name="index"),
     path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
+    path("seminars-upenn/", view=seminars_view, name="seminars_view"),
     path("updates/", TemplateView.as_view(template_name="pages/updates_landing.html"), name="updates_landing"),
     re_path(r'^updates/(?P<type_of_update>\w+)/(?:page-(?P<page_number>\d+)/)?$', updates_view, name="updates_view"),
     path("careers/", view=careers_view, name="careers_view"),
@@ -20,6 +21,7 @@ urlpatterns = [
         include("hain_site.users.urls", namespace="users"),
     ),
     path("accounts/", include("allauth.urls")),
+    path("tinymce/", include("tinymce.urls")),
     path("favicon.ico", RedirectView.as_view(url='/static/images/favicons/favicon.ico', permanent=True)),
     path(
         "common/",

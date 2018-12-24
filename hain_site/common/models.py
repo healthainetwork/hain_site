@@ -1,5 +1,7 @@
 from django.db import models
 import datetime
+from tinymce import HTMLField
+
 
 # Create your models here.
 class AboutMembers(models.Model):
@@ -17,12 +19,6 @@ class AboutMembers(models.Model):
 		verbose_name = "Team Member"
 		verbose_name_plural = "Team Members"
 
-# class Seminars():
-# 	date = DateField()
-# 	startTime = TimeField()
-# 	endTime = TimeField(blank=True);
-# 	location = CharField(_("Location"), max_length=100, blank=True)
-# 	title = CharField(_("Name of Seminar"))
 
 class Updates(models.Model): 
 	TYPE_OF_UPDATE = (
@@ -32,10 +28,10 @@ class Updates(models.Model):
 	)
 	type_of_update = models.CharField("Update",max_length=1, choices=TYPE_OF_UPDATE)
 	title = models.CharField("Title", max_length=250, blank=True)
-	description = models.CharField("Description", max_length=1000)
+	description = HTMLField("Description")
 	image = models.ImageField()
 	article_link = models.URLField()
-	publication_date = models.DateField("Date", default=datetime.date.today())
+	publication_date = models.DateField("Date", default=datetime.date.today)
 	class Meta: 
 		verbose_name = "Update"
 		verbose_name_plural = "Updates"
@@ -63,3 +59,20 @@ class Career(models.Model):
 		verbose_name_plural = "Careers"
 	def __str__(self): 
 		return "%s, %s" % (self.company, self.career_role, )
+
+class Seminar(models.Model):
+	term_list = (
+		('1808', 'Fall 2018'),
+		('1901', 'Spring 2019'),
+		('1906', 'Summer 2019'),
+		('1908', 'Fall 2019'),
+		('2001', 'Spring 2020'),
+
+	)
+	term = models.CharField("Term",max_length=4, choices=term_list)
+	event_date = models.DateField("Date", default=datetime.date.today)
+	location = HTMLField("Time & Location", default="<p>Time:</p><p>Location:</p>")
+	description = HTMLField("Presentation")
+	recap = HTMLField("Recap", blank=True)
+
+

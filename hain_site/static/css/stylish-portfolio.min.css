@@ -8,7 +8,7 @@
  	height:100%
  }
  body{
- 	font-family:'Source Sans Pro'
+ 	font-family: 'Montserrat', sans-serif;
  }
  .btn-xl{
  	padding:1.25rem 2.5rem
@@ -80,7 +80,7 @@
  }
  @media (min-width:992px){
  	.masthead{
- 		height:100vh
+ 		height:50vh
  	}
  	.masthead h1{
  		font-size:5.5rem
@@ -265,12 +265,7 @@
  	background-color:#155d74;
  	text-decoration:none
  }
- a{
- 	color:#1d809f
- }
- a:active,a:focus,a:hover{
- 	color:#155d74
- }
+
  .btn-primary{
  	background-color:#1d809f!important;
  	border-color:#1d809f!important;
@@ -309,3 +304,13 @@
  .text-secondary{
  	color:#ecb807!important
  }
+
+ .bg-light a, .bg-secondary a {
+  color:#424242;
+  text-decoration: underline;
+}
+
+.bg-primary a {
+  color:#d3d3d3;
+  text-decoration: underline;
+}

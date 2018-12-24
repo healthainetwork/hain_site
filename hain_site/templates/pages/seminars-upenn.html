@@ -1,0 +1,20 @@
+{% extends "pages/base.html" %}
+{% load static %}
+{% load django_tables2 %}
+
+{% block title %}HEALTH AI NETWORK - AI in healthcare{% endblock %}
+
+{% block header_content %}
+  	<h1 class="mb-1">Upcoming Seminars.</h1>
+  	<p>Fall 2018 @UPenn</p>
+{% endblock %}
+
+{% block content %}
+
+  <section class="content-section bg-light" id="seminars-upenn">
+  	<div class="container">
+      {% render_table table %}
+    </div>
+  </section>
+
+{% endblock %}

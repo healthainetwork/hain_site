@@ -18,7 +18,7 @@
         AI is happening in health care. <br>
         It's time we get involved together.
       </h3>
-      <p class="lead mb-5">Join the network of professionals & students interested in applying AI technologies in health care with the <a href="#about">shared mission</a></p>
+      <p class="lead mb-5">Join the network of professionals & students interested in applying AI technologies in health care with the <a class="js-scroll-trigger" href="#about">shared mission</a></p>
       </div>
     </div>       
     </div>
@@ -169,7 +169,7 @@
     <div class="row">
       <div class="col-lg-4">
       <h2>Fall 2018 | Penn</h2>
-      <p>Click <a href="https://www.healthainetwork.org/fall-2018-upenn.html">here</a> for a list of upcoming seminars and recaps of past ones @UPenn. Seminars will be live streamed on <a href="http://www.youtube.com/channel/UCfwRMLvTFymNnkA0ojW-QLw/">our YouTube channel</a></p>
+      <p>Click <a href="{% url 'seminars_view' %}">here</a> for a list of upcoming seminars and recaps of past ones @UPenn. Seminars will be live streamed on <a href="http://www.youtube.com/channel/UCfwRMLvTFymNnkA0ojW-QLw/">our YouTube channel</a></p>
       </div>
       <div class="col-lg-4">
       <h2>Fall 2018 | Stanford</h2>
@@ -187,63 +187,68 @@
   <section class="content-section" id="about">
 
     <div class="container">
-    <p>Empowering users & innovators in healthcare.</p>
-    <p class="mb-2">“The best way to predict the future is to invent it”  - Alan Kay -</p>
+      <p>Empowering users & innovators in healthcare.</p>
+      <p class="mb-2">“The best way to predict the future is to invent it”  - Alan Kay -</p>
 
-    <h2>Our Mission</h2>
-    <p><strong>Health AI Network</strong> is an open multidisciplinary community of students and professionals interested in using AI effectively to address needs in healthcare. </p>
+      <div id="mission">
+        <div class="content-section-heading text-center">
+          <h2 class="mb-5">Our Mission</h2>
+        </div>
+        <p><strong>Health AI Network</strong> is an open multidisciplinary community of students and professionals interested in using AI effectively to address needs in healthcare. </p>
 
-    <p><strong>Our Mission</strong> is to <strong>advance proper understanding, development, and adoption of AI in healthcare.</strong><br> 
-    <strong>We believe</strong> that artificial intelligence technologies can make health care more accessible, affordable, accurate, & humane.<br>
-    <strong>We also believe</strong> it is critical to enable health care professionals to participate in the ideation, development, and implementation of health AI solutions. </p>
+        <p><strong>Our Mission</strong> is to <strong>advance proper understanding, development, and adoption of AI in healthcare.</strong><br> 
+        <strong>We believe</strong> that artificial intelligence technologies can make health care more accessible, affordable, accurate, & humane.<br>
+        <strong>We also believe</strong> it is critical to enable health care professionals to participate in the ideation, development, and implementation of health AI solutions. </p>
 
-    <p><strong>We enable</strong> relevant stakeholders across industries to learn of each others' needs & capabilities with the hope of impactful collaboration via providing platform & resources for: </p>
+        <p><strong>We enable</strong> relevant stakeholders across industries to learn of each others' needs & capabilities with the hope of impactful collaboration via providing platform & resources for: </p>
 
-    <p><strong>Learning:</strong>  We discover, curate, and develop content to equip stakeholders in clinical service, business, and data science with the essential language and perspective to leverage AI effectively. Our current offerings are annual Seminar Series and Health AI Newsletter. Stay tuned for our practical Primer (to be released this winter)!</p>
+        <p><strong>Learning:</strong>  We discover, curate, and develop content to equip stakeholders in clinical service, business, and data science with the essential language and perspective to leverage AI effectively. Our current offerings are annual Seminar Series and Health AI Newsletter. Stay tuned for our practical Primer (to be released this winter)!</p>
 
-    <p><strong>Action:</strong> We identify low-hanging problems in healthcare ripe for AI application and empower motivated individuals to tackle. Our Team is actively setting up the following to make available to our wider Community in January 2019: 
-    - Clinical Data Challenge: crowdsourcing best data science solution for a well-identified problem with well-prepped data 
-    - Incubator: providing a structured program with necessary resources & supportive environment to help entrepreneurially-wired members to take the first crucial steps in building a commercial health information technology solution. </p>
-
-    <hr>
-    <div class="content-section-heading text-center">
-      <!-- <h3 class="text-secondary mb-0">About Team</h3> -->
-      <h2 class="mb-5">Our Team</h2>
-    </div>
-    <div class="row no-gutters">
-
-      {% for member in member_list %}
-
-      <div class="col-lg-4 mb-4 mx-auto text-center">
-        <img class="mb-2 img-fluid" src="{{MEDIA_URL}}{{ member.headshot }}" alt="{{ member.name }} Headshot">
-        <h4>
-        <strong>{{ member.name }}</strong>{% if member.degree %}, {{ member.degree }}{% endif %}
-        </h4>
-        <p class="mb-0">{{ member.profession }} | {{ member.institution }}</p>
-        <p class="mb-0">{{ member.team_role }}{% if member.team_department %}, {{ member.team_department }}{% endif %}</p>
+        <p><strong>Action:</strong> We identify low-hanging problems in healthcare ripe for AI application and empower motivated individuals to tackle. Our Team is actively setting up the following to make available to our wider Community in January 2019: 
+        - Clinical Data Challenge: crowdsourcing best data science solution for a well-identified problem with well-prepped data 
+        - Incubator: providing a structured program with necessary resources & supportive environment to help entrepreneurially-wired members to take the first crucial steps in building a commercial health information technology solution. </p>
       </div>
-      {% endfor %}
+      <hr>
+      <div id="team">
+        <div class="content-section-heading text-center">
+          <!-- <h3 class="text-secondary mb-0">About Team</h3> -->
+          <h2 class="mb-5">Our Team</h2>
+        </div>
+        <div class="row no-gutters">
 
-    </div>
+          {% for member in member_list %}
 
-    <div class="content-section-heading text-center">
-      <h2 class="mb-5">Our Advisors</h2>
-    </div>
+          <div class="col-lg-4 mb-4 mx-auto text-center">
+            <img class="mb-2 img-fluid" src="{{MEDIA_URL}}{{ member.headshot }}" alt="{{ member.name }} Headshot">
+            <h4>
+            <strong>{{ member.name }}</strong>{% if member.degree %}, {{ member.degree }}{% endif %}
+            </h4>
+            <p class="mb-0">{{ member.profession }} | {{ member.institution }}</p>
+            <p class="mb-0">{{ member.team_role }}{% if member.team_department %}, {{ member.team_department }}{% endif %}</p>
+          </div>
+          {% endfor %}
 
-    <div class="row no-gutters">
+        </div>
 
-      {% for member in advisors %}
-      <div class="col-lg-4 mb-4 mx-auto text-center">
-      <img class="mb-2 img-fluid" src="{{MEDIA_URL}}{{ member.headshot }}" alt="{{ member.name }} Headshot">
-      <h4>
-        <strong>{{ member.name }}</strong>{% if member.degree %}, {{ member.degree }}{% endif %}
-      </h4>
-      <p class="mb-0">{{ member.profession }} | {{ member.institution }}</p>
-      <p class="mb-0">{{ member.team_role }}{% if member.team_department %}, {{ member.team_department }}{% endif %}</p>
+        <div class="content-section-heading text-center">
+          <h2 class="mb-5">Our Advisors</h2>
+        </div>
+
+        <div class="row no-gutters">
+
+          {% for member in advisors %}
+          <div class="col-lg-4 mb-4 mx-auto text-center">
+          <img class="mb-2 img-fluid" src="{{MEDIA_URL}}{{ member.headshot }}" alt="{{ member.name }} Headshot">
+          <h4>
+            <strong>{{ member.name }}</strong>{% if member.degree %}, {{ member.degree }}{% endif %}
+          </h4>
+          <p class="mb-0">{{ member.profession }} | {{ member.institution }}</p>
+          <p class="mb-0">{{ member.team_role }}{% if member.team_department %}, {{ member.team_department }}{% endif %}</p>
+          </div>
+          {% endfor %}
+
+        </div>
       </div>
-      {% endfor %}
-
-    </div>
     </div>
   </section>
 {% endblock %}

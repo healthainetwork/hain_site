@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro';
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-xl {
@@ -104,7 +104,7 @@ h6 {
 
 @media (min-width: 992px) {
   .masthead {
-    height: 100vh;
+    height: 50vh;
   }
   .masthead h1 {
     font-size: 5.5rem;
@@ -313,14 +313,6 @@ footer.footer .social-link:hover {
   text-decoration: none;
 }
 
-a {
-  color: #1D809F;
-}
-
-a:hover, a:focus, a:active {
-  color: #155d74;
-}
-
 .btn-primary {
   background-color: #1D809F !important;
   border-color: #1D809F !important;
@@ -367,4 +359,14 @@ a:hover, a:focus, a:active {
 
 .text-secondary {
   color: #ecb807 !important;
+}
+
+.bg-light a, .bg-secondary a {
+  color:#424242;
+  text-decoration: underline;
+}
+
+.bg-primary a {
+  color:#d3d3d3;
+  text-decoration: underline;
 }
