@@ -30,7 +30,6 @@ class Updates(models.Model):
 	title = models.CharField("Title", max_length=250, blank=True)
 	description = HTMLField("Description")
 	image = models.ImageField()
-	article_link = models.URLField()
 	publication_date = models.DateField("Date", default=datetime.date.today)
 	class Meta: 
 		verbose_name = "Update"

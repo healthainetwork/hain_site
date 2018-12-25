@@ -63,13 +63,13 @@
           <a class="nav-link dropdown-toggle" href="{% url 'updates_landing' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Updates
           </a>
+
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{% url 'updates_view' type_of_update='clinical' %}">Clinical</a>
             <a class="dropdown-item" href="{% url 'updates_view' type_of_update='business_funding' %}">Business & Funding</a>
             <a class="dropdown-item" href="{% url 'updates_view' type_of_update='technology' %}">Technology</a>
           </div>
         </li>
-
         <li class="sidebar-nav-item">
           <a class="nav-link" href="{% url 'careers_view' %}">Careers</a>
         </li>
@@ -89,7 +89,7 @@
     {% endblock %}
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer bg-light">
       <div class="container">
 
         <div class="row">

@@ -3,6 +3,8 @@ from itertools import chain
 from .models import *
 from django_tables2 import RequestConfig
 from .tables  import SeminarTable
+import datetime
+
 
 import collections
 
@@ -28,7 +30,7 @@ def index_view(request):
 def updates_view(request, type_of_update, page_number = 1):
     update_categories = {'clinical': 'C', 'business_funding': 'B', 'technology': 'T'}
 
-    updates = Updates.objects.filter(type_of_update=update_categories[type_of_update]).order_by('-publication_date')
+    updates = Updates.objects.filter(publication_date__lte=datetime.date.today(), type_of_update=update_categories[type_of_update]).order_by('-publication_date')
 
     context = {'updates': updates, 'category': type_of_update, }
 

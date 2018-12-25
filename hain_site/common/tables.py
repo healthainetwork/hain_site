@@ -9,3 +9,4 @@ class SeminarTable(tables.Table):
         model = Seminar
         exclude = ('id', 'term', 'event_date', )
         template_name = 'django_tables2/bootstrap.html'
+        orderable = False
