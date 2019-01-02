@@ -3,7 +3,6 @@ version: '3'
 volumes:
   production_postgres_data: {}
   production_postgres_data_backups: {}
-  production_caddy: {}
 
 services:
   django:
@@ -12,23 +11,13 @@ services:
       dockerfile: ./compose/production/django/Dockerfile
     image: hain_site_production_django
     depends_on:
-      - postgres
       - redis
+    volumes:
+      - .:/app
     env_file:
       - ./.envs/.production/.django
       - ./.envs/.production/.postgres
     command: /start
-
-  postgres:
-    build:
-      context: .
-      dockerfile: ./compose/production/postgres/Dockerfile
-    image: hain_site_production_postgres
-    volumes:
-      - production_postgres_data:/var/lib/postgresql/data
-      - production_postgres_data_backups:/backups
-    env_file:
-      - ./.envs/.production/.postgres
 
   caddy:
     build:
